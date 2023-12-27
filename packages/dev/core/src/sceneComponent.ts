@@ -263,11 +263,8 @@ export class Stage<T extends Function> extends Array<{ index: number; component:
      */
     public registerStep(index: number, component: ISceneComponent, action: T): void {
         let i = 0;
-        let maxIndex = Number.MAX_VALUE;
         for (; i < this.length; i++) {
-            const step = this[i];
-            maxIndex = step.index;
-            if (index < maxIndex) {
+            if (index < this[i].index) {
                 break;
             }
         }
