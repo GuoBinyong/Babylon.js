@@ -623,11 +623,7 @@ export class Camera extends Node {
 
     /** @internal */
     public _isSynchronizedViewMatrix(): boolean {
-        if (!super._isSynchronized()) {
-            return false;
-        }
-
-        return this._cache.position.equals(this.position) && this._cache.upVector.equals(this.upVector) && this.isSynchronizedWithParent();
+        return super._isSynchronized() && this._cache.position.equals(this.position) && this._cache.upVector.equals(this.upVector) && this.isSynchronizedWithParent();
     }
 
     /** @internal */
